@@ -6,7 +6,6 @@
 import java.util.*;
 import java.awt.geom.*;
 import java.io.*;
-
 public class JavaGeometry {
     // make an Area object from the coordinates of a polygon
     static Area makeArea(double[] pts) {
@@ -16,7 +15,6 @@ public class JavaGeometry {
         p.closePath();
         return new Area(p);        
     }
-
     // compute the area of an Area object containing several disjoint polygons
     static double computeArea(Area area) {
         double totArea = 0;
@@ -39,13 +37,11 @@ public class JavaGeometry {
         }
         return totArea;
     }
-
     public static void main(String args[]) throws Exception {
         // areaB.subtract(areaA);
         // areaB.exclusiveOr (areaA);
         // areaB.add (areaA);
         // areaB.intersect (areaA);
-        
         // (1) determine whether B - A is a single closed shape (as 
         //     opposed to multiple shapes)
         boolean isSingle = areaB.isSingular();
@@ -53,19 +49,11 @@ public class JavaGeometry {
         //   areaB.isEmpty();
         //   areaB.contains(x, y); // doubles
         // Finally, some useful things we didn't use in this example:
-        //
-        //   Ellipse2D.Double ellipse = new Ellipse2D.Double (double x, double y, 
-        //                                                    double w, double h);
-        //
+        //   Ellipse2D.Double ellipse = new Ellipse2D.Double (double x, double y, double w, double h);
         //     creates an ellipse inscribed in box with bottom-left corner (x,y)
         //     and upper-right corner (x+y,w+h)
-        // 
-        //   Rectangle2D.Double rect = new Rectangle2D.Double (double x, double y, 
-        //                                                     double w, double h);
-        //
-        //     creates a box with bottom-left corner (x,y) and upper-right 
-        //     corner (x+y,w+h)
-        //
+        //   Rectangle2D.Double rect = new Rectangle2D.Double (double x, double y, double w, double h);
+        //     creates a box with bottom-left corner (x,y) and upper-right corner (x+y,w+h)
         // Each of these can be embedded in an Area object (e.g., new Area (rect)).
     }
 }
